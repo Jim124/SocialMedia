@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native';
 import { getFontFamily } from '../../assets/fonts/helper';
 const style = StyleSheet.create({
   usePostContainer: {
+    flex: 1,
     marginTop: 35,
     paddingBottom: 20,
     borderBottomWith: 1,

@@ -32,8 +32,8 @@ export default function App() {
     return null;
   }
   return (
-    <SafeAreaView onLayout={onLayoutRootView}>
-      <View>
+    <SafeAreaView onLayout={onLayoutRootView} style={{ flex: 1 }}>
+      <View style={{ flex: 1 }}>
         <View style={globalStyle.header}>
           <Title title={`Let's Explore`} />
           <TouchableOpacity style={globalStyle.messageIcon}>
