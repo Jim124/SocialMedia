@@ -8,7 +8,7 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import Title from './components/Title/Title';
 import globalStyle from './assets/styles/globalStyle';
 import Users from './components/Users/Users';
-
+import Posts from './components/Posts/Posts';
 SplashScreen.preventAutoHideAsync();
 export default function App() {
   const [fontsLoaded, fontError] = useFonts({
@@ -33,20 +33,23 @@ export default function App() {
   }
   return (
     <SafeAreaView onLayout={onLayoutRootView}>
-      <View style={globalStyle.header}>
-        <Title title={`Let's Explore`} />
-        <TouchableOpacity style={globalStyle.messageIcon}>
-          <FontAwesomeIcon
-            icon={faEnvelope}
-            style={{ color: '#898DAE' }}
-            size={20}
-          />
-          <View style={globalStyle.messageNumberContainer}>
-            <Text style={globalStyle.messageNumber}>2</Text>
-          </View>
-        </TouchableOpacity>
+      <View>
+        <View style={globalStyle.header}>
+          <Title title={`Let's Explore`} />
+          <TouchableOpacity style={globalStyle.messageIcon}>
+            <FontAwesomeIcon
+              icon={faEnvelope}
+              style={{ color: '#898DAE' }}
+              size={20}
+            />
+            <View style={globalStyle.messageNumberContainer}>
+              <Text style={globalStyle.messageNumber}>2</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+        <Users />
+        <Posts />
       </View>
-      <Users />
     </SafeAreaView>
   );
 }
