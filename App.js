@@ -1,10 +1,4 @@
-import {
-  SafeAreaView,
-  TouchableOpacity,
-  View,
-  Text,
-  FlatList,
-} from 'react-native';
+import { SafeAreaView, TouchableOpacity, View, Text } from 'react-native';
 import { useFonts } from 'expo-font';
 import { useCallback } from 'react';
 import * as SplashScreen from 'expo-splash-screen';
@@ -13,65 +7,8 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 import Title from './components/Title/Title';
 import globalStyle from './assets/styles/globalStyle';
-import StoryItem from './components/UserStory/StoryItem';
+import Users from './components/Users/Users';
 
-const usesStories = [
-  {
-    id: 1,
-    username: 'zs',
-    profileImageUrl: require('./assets/images/default_profile.png'),
-  },
-  {
-    id: 2,
-    username: 'ls',
-    profileImageUrl: require('./assets/images/default_profile.png'),
-  },
-  {
-    id: 3,
-    username: 'ww',
-    profileImageUrl: require('./assets/images/default_profile.png'),
-  },
-  {
-    id: 4,
-    username: 'zl',
-    profileImageUrl: require('./assets/images/default_profile.png'),
-  },
-  {
-    id: 5,
-    username: 'zq',
-    profileImageUrl: require('./assets/images/default_profile.png'),
-  },
-  {
-    id: 6,
-    username: 'dg',
-    profileImageUrl: require('./assets/images/default_profile.png'),
-  },
-  {
-    id: 7,
-    username: 'ce',
-    profileImageUrl: require('./assets/images/default_profile.png'),
-  },
-  {
-    id: 8,
-    username: 'alex',
-    profileImageUrl: require('./assets/images/default_profile.png'),
-  },
-  {
-    id: 9,
-    username: 'ms',
-    profileImageUrl: require('./assets/images/default_profile.png'),
-  },
-  {
-    id: 10,
-    username: 'dn',
-    profileImageUrl: require('./assets/images/default_profile.png'),
-  },
-  {
-    id: 11,
-    username: 'dg',
-    profileImageUrl: require('./assets/images/default_profile.png'),
-  },
-];
 SplashScreen.preventAutoHideAsync();
 export default function App() {
   const [fontsLoaded, fontError] = useFonts({
@@ -109,19 +46,7 @@ export default function App() {
           </View>
         </TouchableOpacity>
       </View>
-      <View style={globalStyle.userStoryContainer}>
-        <FlatList
-          showsHorizontalScrollIndicator={false}
-          horizontal={true}
-          data={usesStories}
-          renderItem={({ item }) => (
-            <StoryItem
-              firstName={item.username}
-              profileImage={item.profileImageUrl}
-            />
-          )}
-        />
-      </View>
+      <Users />
     </SafeAreaView>
   );
 }
