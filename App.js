@@ -4,6 +4,7 @@ import { useCallback } from 'react';
 
 import * as SplashScreen from 'expo-splash-screen';
 import { getFontFamily } from './assets/fonts/helper';
+import Title from './components/Title/Title';
 
 SplashScreen.preventAutoHideAsync();
 export default function App() {
@@ -29,7 +30,7 @@ export default function App() {
   }
   return (
     <SafeAreaView onLayout={onLayoutRootView}>
-      <Text style={styles.text}>Hello,World</Text>
+      <Title title={`Let's Explore`} />
     </SafeAreaView>
   );
 }
