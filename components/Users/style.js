@@ -1,9 +1,10 @@
 import { StyleSheet } from 'react-native';
 
+import { horizontalScale, verticalScale } from '../../assets/styles/scaling';
 const style = StyleSheet.create({
   userStoryContainer: {
-    marginTop: 20,
-    marginHorizontal: 28,
+    marginTop: verticalScale(20),
+    marginHorizontal: horizontalScale(28),
   },
 });
 

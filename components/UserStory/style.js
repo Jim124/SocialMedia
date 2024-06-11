@@ -1,15 +1,20 @@
 import { StyleSheet } from 'react-native';
 import { getFontFamily } from '../../assets/fonts/helper';
 
+import {
+  scaleFontSize,
+  horizontalScale,
+  verticalScale,
+} from '../../assets/styles/scaling';
 const style = StyleSheet.create({
   storyContainer: {
-    paddingRight: 20,
+    paddingRight: horizontalScale(20),
   },
   firstName: {
     fontFamily: getFontFamily('inter', '500'),
-    fontSize: 14,
+    fontSize: scaleFontSize(14),
     color: '#022150',
-    marginTop: 8,
+    marginTop: verticalScale(8),
     textAlign: 'center',
   },
 });

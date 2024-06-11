@@ -1,10 +1,10 @@
 import { StyleSheet } from 'react-native';
-
+import { horizontalScale } from '../../assets/styles/scaling';
 const style = StyleSheet.create({
   useImageContainer: {
     borderColor: '#F35BAC',
     borderWidth: 1,
-    padding: 3,
+    padding: horizontalScale(3),
   },
 });
 
