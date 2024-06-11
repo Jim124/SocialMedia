@@ -33,7 +33,6 @@ const style = StyleSheet.create({
     fontSize: 12,
     marginTop: 5,
     textAlign: 'left',
-    marginLeft: -4,
   },
   imageContainer: {
     marginVertical: 20,
