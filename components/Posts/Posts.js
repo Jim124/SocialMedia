@@ -1,4 +1,4 @@
-import { FlatList, View } from 'react-native';
+import { FlatList, View, Dimensions } from 'react-native';
 import { useEffect, useState } from 'react';
 
 import style from './style';
@@ -187,7 +187,14 @@ const Posts = () => {
   const [postCurrentPage, setPostCurrentPage] = useState(1);
   const [postsRenderData, setPostsRenderData] = useState([]);
   const [isPostLoading, setIsPostLoading] = useState(false);
+  const [screenSize, setScreenSize] = useState(Dimensions.get('screen'));
 
+  useEffect(() => {
+    const subscription = Dimensions.addEventListener('change', ({ screen }) => {
+      setScreenSize(screen);
+    });
+    return () => subscription?.remove();
+  });
   function pagination(database, currentPage, pageSize) {
     console.log('currentPage:' + currentPage);
     const startIndex = (currentPage - 1) * pageSize;
